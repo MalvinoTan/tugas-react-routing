@@ -1,0 +1,11 @@
+.container_about_app {
+    display: flex;
+}
+
+.content {
+    padding: 2.5rem;
+}
+
+.title {
+    margin: 1rem 0;
+}
