@@ -2,7 +2,8 @@
 import styles from "./style.module.css";
 
 /** Components */
-import NavBarAbout from "../../Components/NavBarAbout"
+import NavBarAbout from "../../Components/NavBarAbout";
+import ContentAbout from "../../Components/ContentAbout";
 
 const AboutAuthor = () => {
 

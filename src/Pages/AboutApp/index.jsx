@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 /** Style */
 import styles from "./style.module.css";
 
@@ -8,7 +6,7 @@ import NavBarAbout from "../../Components/NavBarAbout";
 import ContentAbout from "../../Components/ContentAbout";
 
 const AboutApp = () => {
-    
+
     const content = {
         title: "About the App",
         paragraph: `In this app, you can add, delete, submit and edit items. 

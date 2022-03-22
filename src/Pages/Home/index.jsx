@@ -15,7 +15,7 @@ import styles from "./style.module.css"
 const Home = () => {
 
     const [widthNav, setWidthNav] = useState(0);
-    
+
     const [todos, setTodos] = useState([
         {
             id: uuidv4(),
