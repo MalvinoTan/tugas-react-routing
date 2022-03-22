@@ -1,11 +1,9 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 
 /** Styles */
 import styles from "./style.module.css";
 
-const NavBar = () => {
-    const [widthNav, setWidthNav] = useState(0);
+const NavBarHome = ({ widthNav, setWidthNav }) => {
 
     const openNav = () => {
         setWidthNav(300);
@@ -28,4 +26,4 @@ const NavBar = () => {
     );
 }
 
-export default NavBar;
+export default NavBarHome;

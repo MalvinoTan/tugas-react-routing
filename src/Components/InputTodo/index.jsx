@@ -1,27 +1,33 @@
-import { useState } from "react";
+/** Generate Random ID */
+import { v4 as uuidv4 } from "uuid";
 
 /** Styles */
 import styles from "./style.module.css";
 
-const InputTodo = ({ addTodoItem }) => {
-    const [input, setInput] = useState("");
+const InputTodo = ({ input, setInput, todos, setTodos }) => {
 
-    const onChangeInput = (e) => {
+    const handleInput = (e) => {
         setInput(e.target.value);
     }
 
-    const handleSubmit = () => {
+    const handleSubmit = (e) => {
+        console.log("JALAN")
+        e.preventDefault();
         (input === "") ?
             alert("Inputan Tidak Boleh Kosong!!!") :
-            addTodoItem(input);
-            
+            setTodos([...todos, {
+                id: uuidv4(),
+                title: input,
+                completed: false
+            }]);
+
         setInput("");
     }
 
     return (
-        <form className={styles.form_input}>
-            <input className={styles.input_text_todo} type="text" value={input} placeholder="Add Todo..." onChange={onChangeInput} />
-            <button className={styles.btn_submit_todo} type="button" onClick={handleSubmit}>Submit</button>
+        <form className={styles.form_input} onSubmit={handleSubmit}>
+            <input className={styles.input_text_todo} type="text" value={input} placeholder="Add Todo..." onChange={handleInput} />
+            <button className={styles.btn_submit_todo} type="submit">Submit</button>
         </form>
     );
 }

@@ -1,9 +1,9 @@
 /** Styles */
 import styles from "./style.module.css";
 
-const Header = () => {
+const Header = ({ title }) => {
     return (
-        <h1 className={styles.header}>todos</h1>
+        <h1 className={styles.header}>{title}</h1>
     );
 }
 
