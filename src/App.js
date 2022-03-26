@@ -1,4 +1,4 @@
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 /** Styles */
 import './App.css';
@@ -11,15 +11,13 @@ import NotFound from './Pages/NotFound';
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/about" component={AboutApp} />
-        <Route exact path="/about/about-app" component={AboutApp} />
-        <Route exact path="/about/about-author" component={AboutAuthor} />
-        <Route component={NotFound} />
-      </Switch>
-    </BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/about" element={<AboutApp />} />
+      <Route path="/about/about-app" element={<AboutApp />} />
+      <Route path="/about/about-author" element={<AboutAuthor />} />
+      <Route path="*" element={<NotFound />} />
+    </Routes>
   );
 }
 
